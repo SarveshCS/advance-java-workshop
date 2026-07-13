@@ -22,6 +22,7 @@ Add each program, notes file, or exercise under the correct day section. This wo
 | Topic | Description | File |
 | --- | --- | --- |
 | Student marks summary | Calculates total marks, average marks, highest marks, and grade using arrays, loops, methods, and conditions. | [day_1/StudentMarksSummary.java](day_1/StudentMarksSummary.java) |
+| For-each array printing | Prints all elements from a 10-element integer array using a for-each loop. | [day_1/ForEachArrayExample.java](day_1/ForEachArrayExample.java) |
 
 ### Day1
 
