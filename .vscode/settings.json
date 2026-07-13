@@ -1,0 +1,15 @@
+{
+    "terminal.integrated.profiles.windows": {
+        "PowerShell with Repo Java": {
+            "source": "PowerShell",
+            "args": [
+                "-NoExit",
+                "-ExecutionPolicy",
+                "Bypass",
+                "-Command",
+                ". '${workspaceFolder}\\.vscode\\java-repo-commands.ps1'"
+            ]
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "PowerShell with Repo Java"
+}

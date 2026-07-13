@@ -1,0 +1,19 @@
+# Local AI assistant instructions
+AGENTS.md
+
+# Java build outputs
+*.class
+*/out/*
+target/
+build/
+out/
+
+# IDE and OS files
+.vscode/*
+!.vscode/tasks.json
+!.vscode/java-repo-commands.ps1
+!.vscode/settings.json
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
