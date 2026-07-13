@@ -1,7 +1,7 @@
 public class PolymorphismExample {
     public static void main(String[] args) {
-        PaymentMethod cardPayment = new CardPayment("Sarvesh", "1234");
-        PaymentMethod upiPayment = new UpiPayment("sarvesh@upi");
+        PaymentMethod cardPayment = new CardPayment("Sample Customer", "1234");
+        PaymentMethod upiPayment = new UpiPayment("student@upi");
 
         printPaymentStatus(cardPayment, 1250.00);
         printPaymentStatus(upiPayment, 499.00);

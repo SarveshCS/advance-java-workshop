@@ -32,6 +32,8 @@ Add each program, notes file, or exercise under the correct day section. This wo
 | Encapsulation | Models a bank account with private fields and controlled deposit, withdrawal, and getter methods. | [Day1/EncapsulationExample.java](Day1/EncapsulationExample.java) |
 | Inheritance | Reuses common employee details in a parent class and extends them with full-time salary details. | [Day1/InheritanceExample.java](Day1/InheritanceExample.java) |
 | Polymorphism | Uses one parent reference type to call different payment behavior for card and UPI payments. | [Day1/PolymorphismExample.java](Day1/PolymorphismExample.java) |
+| Constructor | Creates course enrollment objects using a default constructor, parameterized constructor, and constructor chaining. | [Day1/ConstructorExample.java](Day1/ConstructorExample.java) |
+| Abstraction | Defines a common report template with an abstract method implemented by sales and attendance reports. | [Day1/AbstractionExample.java](Day1/AbstractionExample.java) |
 
 ## Running Java Programs
 

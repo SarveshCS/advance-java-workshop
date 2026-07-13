@@ -1,6 +1,6 @@
 public class InheritanceExample {
     public static void main(String[] args) {
-        FullTimeEmployee employee = new FullTimeEmployee("E101", "Neha", 45000.00, 8000.00);
+        FullTimeEmployee employee = new FullTimeEmployee("E101", "Sample Employee", 45000.00, 8000.00);
 
         employee.printBasicDetails();
         System.out.println("Monthly Salary: Rs. " + employee.calculateMonthlySalary());

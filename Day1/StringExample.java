@@ -1,6 +1,6 @@
 public class StringExample {
     public static void main(String[] args) {
-        String rawName = "   sarvesh chavan   ";
+        String rawName = "   student user   ";
         String courseCode = "adv-java";
 
         String cleanedName = rawName.trim();
