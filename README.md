@@ -21,7 +21,17 @@ Add each program, notes file, or exercise under the correct day section. This wo
 
 | Topic | Description | File |
 | --- | --- | --- |
-| _Add the first Day 1 program here_ | _Short description_ | _Link_ |
+| Student marks summary | Calculates total marks, average marks, highest marks, and grade using arrays, loops, methods, and conditions. | [day_1/StudentMarksSummary.java](day_1/StudentMarksSummary.java) |
+
+### Day1
+
+| Topic | Description | File |
+| --- | --- | --- |
+| String | Cleans a raw student name, formats a display name, and generates a course username using Java String methods. | [Day1/StringExample.java](Day1/StringExample.java) |
+| Array | Stores expense categories and amounts in arrays, then calculates total expense and the highest expense category. | [Day1/ArrayExample.java](Day1/ArrayExample.java) |
+| Encapsulation | Models a bank account with private fields and controlled deposit, withdrawal, and getter methods. | [Day1/EncapsulationExample.java](Day1/EncapsulationExample.java) |
+| Inheritance | Reuses common employee details in a parent class and extends them with full-time salary details. | [Day1/InheritanceExample.java](Day1/InheritanceExample.java) |
+| Polymorphism | Uses one parent reference type to call different payment behavior for card and UPI payments. | [Day1/PolymorphismExample.java](Day1/PolymorphismExample.java) |
 
 ## Running Java Programs
 
