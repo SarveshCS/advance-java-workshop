@@ -1,6 +1,7 @@
 $script:RealJavac = (Get-Command javac.exe -ErrorAction Stop).Source
 $script:RealJava = (Get-Command java.exe -ErrorAction Stop).Source
 $script:RepoRoot = Resolve-Path (Join-Path $PSScriptRoot "..")
+$script:RepoLib = Join-Path $script:RepoRoot "lib\*"
 
 function javac {
     param(
@@ -8,7 +9,7 @@ function javac {
         [string[]]$Arguments
     )
 
-    if ($Arguments -contains "-d") {
+    if ($Arguments -contains "-d" -or $Arguments -contains "-cp" -or $Arguments -contains "-classpath" -or $Arguments -contains "--class-path") {
         & $script:RealJavac @Arguments
         return
     }
@@ -25,9 +26,10 @@ function javac {
     $resolvedSource = Resolve-Path $sourceFile
     $sourceFolder = Split-Path -Parent $resolvedSource
     $outFolder = Join-Path $sourceFolder "out"
+    $classPath = "$outFolder;$script:RepoLib"
 
     New-Item -ItemType Directory -Force -Path $outFolder | Out-Null
-    & $script:RealJavac -d $outFolder @Arguments
+    & $script:RealJavac -cp $classPath -d $outFolder @Arguments
 }
 
 function java {
@@ -41,9 +43,18 @@ function java {
         return
     }
 
+    $sourceFile = $Arguments | Where-Object {
+        $_ -like "*.java" -and (Test-Path $_)
+    } | Select-Object -First 1
+
+    if ($sourceFile) {
+        & $script:RealJava -cp $script:RepoLib @Arguments
+        return
+    }
+
     $currentOut = Join-Path (Get-Location) "out"
     if (Test-Path $currentOut) {
-        & $script:RealJava -cp $currentOut @Arguments
+        & $script:RealJava -cp "$currentOut;$script:RepoLib" @Arguments
         return
     }
 
@@ -57,7 +68,7 @@ function java {
             Where-Object { Test-Path (Join-Path $_.FullName $classFile) }
 
         if ($matches.Count -eq 1) {
-            & $script:RealJava -cp $matches[0].FullName @Arguments
+            & $script:RealJava -cp "$($matches[0].FullName);$script:RepoLib" @Arguments
             return
         }
 
@@ -69,4 +80,4 @@ function java {
     & $script:RealJava @Arguments
 }
 
-Write-Host "Repo Java commands enabled: javac writes to the source folder's out directory; java uses the nearest matching out directory."
+Write-Host "Repo Java commands enabled: javac writes to the source folder's out directory; java uses the nearest matching out directory and lib/*.jar dependencies."

@@ -4,7 +4,7 @@
         {
             "label": "Java: compile active file to day out",
             "type": "shell",
-            "command": "$source = '${file}'; if ([System.IO.Path]::GetExtension($source) -ne '.java') { throw 'Open a .java file before running this task.' }; $dayFolder = Split-Path -Parent $source; $outFolder = Join-Path $dayFolder 'out'; New-Item -ItemType Directory -Force -Path $outFolder | Out-Null; javac -d $outFolder $source",
+            "command": "$source = '${file}'; if ([System.IO.Path]::GetExtension($source) -ne '.java') { throw 'Open a .java file before running this task.' }; $repoRoot = Resolve-Path '${workspaceFolder}'; $dayFolder = Split-Path -Parent $source; $outFolder = Join-Path $dayFolder 'out'; $libPath = Join-Path $repoRoot 'lib\\*'; $classPath = \"$outFolder;$libPath\"; New-Item -ItemType Directory -Force -Path $outFolder | Out-Null; javac -cp $classPath -d $outFolder $source",
             "problemMatcher": "$javac",
             "group": {
                 "kind": "build",
@@ -18,7 +18,7 @@
         {
             "label": "Java: run active file from day out",
             "type": "shell",
-            "command": "$source = '${file}'; if ([System.IO.Path]::GetExtension($source) -ne '.java') { throw 'Open a .java file before running this task.' }; $dayFolder = Split-Path -Parent $source; $outFolder = Join-Path $dayFolder 'out'; $content = Get-Content -Raw $source; $className = [System.IO.Path]::GetFileNameWithoutExtension($source); if ($content -match '(?m)^\\s*package\\s+([A-Za-z_][\\w]*(?:\\.[A-Za-z_][\\w]*)*)\\s*;') { $className = \"$($Matches[1]).$className\" }; java -cp $outFolder $className",
+            "command": "$source = '${file}'; if ([System.IO.Path]::GetExtension($source) -ne '.java') { throw 'Open a .java file before running this task.' }; $repoRoot = Resolve-Path '${workspaceFolder}'; $dayFolder = Split-Path -Parent $source; $outFolder = Join-Path $dayFolder 'out'; $libPath = Join-Path $repoRoot 'lib\\*'; $classPath = \"$outFolder;$libPath\"; $content = Get-Content -Raw $source; $className = [System.IO.Path]::GetFileNameWithoutExtension($source); if ($content -match '(?m)^\\s*package\\s+([A-Za-z_][\\w]*(?:\\.[A-Za-z_][\\w]*)*)\\s*;') { $className = \"$($Matches[1]).$className\" }; java -cp $classPath $className",
             "dependsOn": "Java: compile active file to day out",
             "problemMatcher": [],
             "group": "test",

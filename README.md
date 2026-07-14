@@ -23,6 +23,7 @@ Add each program, notes file, or exercise under the correct day section. This wo
 | --- | --- | --- |
 | Student marks summary | Calculates total marks, average marks, highest marks, and grade using arrays, loops, methods, and conditions. | [day_1/StudentMarksSummary.java](day_1/StudentMarksSummary.java) |
 | For-each array printing | Prints all elements from a 10-element integer array using a for-each loop. | [day_1/ForEachArrayExample.java](day_1/ForEachArrayExample.java) |
+| JDBC connection | Connects to a MySQL database by reading the host, port, database name, username, and password from the keyboard. | [day_1/JdbcConnectionExample.java](day_1/JdbcConnectionExample.java) |
 
 ### Day1
 
