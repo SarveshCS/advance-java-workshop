@@ -37,6 +37,16 @@ Add each program, notes file, or exercise under the correct day section. This wo
 | Constructor | Creates course enrollment objects using a default constructor, parameterized constructor, and constructor chaining. | [Day1/ConstructorExample.java](Day1/ConstructorExample.java) |
 | Abstraction | Defines a common report template with an abstract method implemented by sales and attendance reports. | [Day1/AbstractionExample.java](Day1/AbstractionExample.java) |
 
+### Day 2
+
+| Topic | Description | File |
+| --- | --- | --- |
+| JDBC user management | Creates a menu-driven user management system using JDBC, MySQL, SQL statements, and prepared statements. | [day_2/JdbcUserManagementSystem.java](day_2/JdbcUserManagementSystem.java) |
+| Servlet and JSP setup notes | Explains the tools needed for Servlet/JSP development and how to build and run the demo on Tomcat. | [day_2/ServletJspTomcatSetupNotes.md](day_2/ServletJspTomcatSetupNotes.md) |
+| Servlet request handling | Reads a submitted student name, creates a welcome message, and forwards the request to a JSP page. | [day_2/servlet_jsp_demo/src/main/java/HelloServlet.java](day_2/servlet_jsp_demo/src/main/java/HelloServlet.java) |
+| JSP input form | Displays a simple web form that posts student input to the servlet. | [day_2/servlet_jsp_demo/src/main/webapp/index.jsp](day_2/servlet_jsp_demo/src/main/webapp/index.jsp) |
+| JSP result page | Displays the message prepared by the servlet using JSP Expression Language. | [day_2/servlet_jsp_demo/src/main/webapp/result.jsp](day_2/servlet_jsp_demo/src/main/webapp/result.jsp) |
+
 ## Running Java Programs
 
 Create day folders using this pattern:
