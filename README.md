@@ -47,6 +47,23 @@ Add each program, notes file, or exercise under the correct day section. This wo
 | JSP input form | Displays a simple web form that posts student input to the servlet. | [day_2/servlet_jsp_demo/src/main/webapp/index.jsp](day_2/servlet_jsp_demo/src/main/webapp/index.jsp) |
 | JSP result page | Displays the message prepared by the servlet using JSP Expression Language. | [day_2/servlet_jsp_demo/src/main/webapp/result.jsp](day_2/servlet_jsp_demo/src/main/webapp/result.jsp) |
 
+### Day 4
+
+| Topic | Description | File |
+| --- | --- | --- |
+| Question 1 guide | Explains the JDBC create, insert, and display answer with database setup and run commands. | [day_4/Question_1/README.md](day_4/Question_1/README.md) |
+| JDBC create, insert, and display | Creates the `STUDENT` table, inserts 10 sample records, and displays all records using JDBC. | [day_4/Question_1/JdbcProject.java](day_4/Question_1/JdbcProject.java) |
+| Question 2 guide | Explains the JDBC update, delete, insert, and display answer with database setup and run commands. | [day_4/Question_2/README.md](day_4/Question_2/README.md) |
+| JDBC update, delete, and insert | Updates one student, deletes one student, inserts two students, and displays the updated `STUDENT` table. | [day_4/Question_2/JdbcProjectUpdate.java](day_4/Question_2/JdbcProjectUpdate.java) |
+| Question 3 guide | Explains the Servlet and JDBC registration system project, files, database setup, and Tomcat run steps. | [day_4/Question_3/README.md](day_4/Question_3/README.md) |
+| Servlet registration system | Reads registration form data in `RegisterServlet`, inserts it into MySQL, and returns a success or error page. | [day_4/Question_3/FirstDynamicProject/src/main/java/com/workshop/RegisterServlet.java](day_4/Question_3/FirstDynamicProject/src/main/java/com/workshop/RegisterServlet.java) |
+| Registration form | Provides the `register.html` form with name, email, password, gender, and city fields. | [day_4/Question_3/FirstDynamicProject/src/main/webapp/register.html](day_4/Question_3/FirstDynamicProject/src/main/webapp/register.html) |
+| Question 4 guide | Explains the JSP-only login system, credentials, session flow, and Tomcat run steps. | [day_4/Question_4/README.md](day_4/Question_4/README.md) |
+| JSP login page | Collects email and password and posts them to `validate.jsp`. | [day_4/Question_4/FirstDynamicProject/src/main/webapp/login.jsp](day_4/Question_4/FirstDynamicProject/src/main/webapp/login.jsp) |
+| JSP validation page | Checks predefined credentials, creates the HTTP session, and redirects or displays an error. | [day_4/Question_4/FirstDynamicProject/src/main/webapp/validate.jsp](day_4/Question_4/FirstDynamicProject/src/main/webapp/validate.jsp) |
+| JSP profile page | Displays the NIET welcome message and logged-in email when a valid session exists. | [day_4/Question_4/FirstDynamicProject/src/main/webapp/profile.jsp](day_4/Question_4/FirstDynamicProject/src/main/webapp/profile.jsp) |
+| JSP logout page | Invalidates the HTTP session, displays the logout message, and redirects back to login. | [day_4/Question_4/FirstDynamicProject/src/main/webapp/logout.jsp](day_4/Question_4/FirstDynamicProject/src/main/webapp/logout.jsp) |
+
 ## Running Java Programs
 
 Create day folders using this pattern:
