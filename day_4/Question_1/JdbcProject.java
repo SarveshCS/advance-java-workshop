@@ -6,18 +6,12 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class JdbcProject {
-    private static final String DB_HOST = "127.0.0.1";
-    private static final String DB_PORT = "3306";
-    private static final String DB_NAME = "college_workshop";
-    private static final String DB_USERNAME = "root";
-    private static final String DB_PASSWORD = "";
-    private static final String TABLE_NAME = "STUDENT";
+    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/NIET";
+    private static final String USERNAME = "root";
+    private static final String PASSWORD = "";
 
     public static void main(String[] args) {
-        String jdbcUrl = "jdbc:mysql://" + DB_HOST + ":" + DB_PORT + "/" + DB_NAME
-                + "?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
-
-        try (Connection connection = DriverManager.getConnection(jdbcUrl, DB_USERNAME, DB_PASSWORD)) {
+        try (Connection connection = DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD)) {
             createStudentTable(connection);
             insertSampleStudents(connection);
             displayStudents(connection);
@@ -28,27 +22,22 @@ public class JdbcProject {
     }
 
     private static void createStudentTable(Connection connection) throws SQLException {
-        String createTableSql = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + " ("
-                + "id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, "
-                + "name VARCHAR(100) NOT NULL, "
-                + "age INT NOT NULL, "
-                + "department VARCHAR(80) NOT NULL, "
-                + "city VARCHAR(80) NOT NULL"
+        String createTableSql = "CREATE TABLE IF NOT EXISTS STUDENT ("
+                + "ID INT PRIMARY KEY AUTO_INCREMENT, "
+                + "Name VARCHAR(50), "
+                + "Age INT, "
+                + "Department VARCHAR(50), "
+                + "City VARCHAR(50)"
                 + ")";
 
         try (Statement statement = connection.createStatement()) {
             statement.execute(createTableSql);
-            System.out.println("STUDENT table is ready.");
+            System.out.println("STUDENT table created successfully.");
         }
     }
 
     private static void insertSampleStudents(Connection connection) throws SQLException {
-        if (hasStudentRecords(connection)) {
-            System.out.println("Sample records already exist, so insert step was skipped to avoid duplicate rows.");
-            return;
-        }
-
-        String insertSql = "INSERT INTO " + TABLE_NAME + " (name, age, department, city) VALUES (?, ?, ?, ?)";
+        String insertSql = "INSERT INTO STUDENT (Name, Age, Department, City) VALUES (?, ?, ?, ?)";
 
         Object[][] students = {
                 {"Aarav Sharma", 20, "Computer Science", "Noida"},
@@ -77,32 +66,22 @@ public class JdbcProject {
         }
     }
 
-    private static boolean hasStudentRecords(Connection connection) throws SQLException {
-        String countSql = "SELECT COUNT(*) FROM " + TABLE_NAME;
-
-        try (Statement statement = connection.createStatement(); ResultSet resultSet = statement.executeQuery(countSql)) {
-            resultSet.next();
-            return resultSet.getInt(1) > 0;
-        }
-    }
-
     private static void displayStudents(Connection connection) throws SQLException {
-        String selectSql = "SELECT id, name, age, department, city FROM " + TABLE_NAME + " ORDER BY id";
+        String selectSql = "SELECT ID, Name, Age, Department, City FROM STUDENT";
 
         try (Statement statement = connection.createStatement(); ResultSet resultSet = statement.executeQuery(selectSql)) {
             System.out.println();
-            System.out.println("---------------- STUDENT RECORDS ----------------");
+            System.out.println("STUDENT RECORDS");
             System.out.printf("%-5s %-20s %-5s %-24s %-15s%n", "ID", "Name", "Age", "Department", "City");
-            System.out.println("-------------------------------------------------");
 
             while (resultSet.next()) {
                 System.out.printf(
                         "%-5d %-20s %-5d %-24s %-15s%n",
-                        resultSet.getInt("id"),
-                        resultSet.getString("name"),
-                        resultSet.getInt("age"),
-                        resultSet.getString("department"),
-                        resultSet.getString("city"));
+                        resultSet.getInt("ID"),
+                        resultSet.getString("Name"),
+                        resultSet.getInt("Age"),
+                        resultSet.getString("Department"),
+                        resultSet.getString("City"));
             }
         }
     }

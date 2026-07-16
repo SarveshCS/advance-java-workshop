@@ -22,17 +22,17 @@ Tasks:
 
 ## Solution Summary
 
-This folder contains a console JDBC program named `JdbcProject.java`. It uses the same database settings used in the workshop JDBC example:
+This folder contains a simple console JDBC program named `JdbcProject.java`.
 
 | Setting | Value |
 | --- | --- |
-| Host | `127.0.0.1` |
+| Host | `localhost` |
 | Port | `3306` |
-| Database | `college_workshop` |
+| Database | `NIET` |
 | Username | `root` |
 | Password | empty password |
 
-The program creates the `STUDENT` table, inserts 10 sample records when the table is empty, and displays all records in a formatted table.
+The program creates the `STUDENT` table with the exact fields from the question, inserts 10 sample records, and displays all records in a simple structured format.
 
 ## Files
 
@@ -45,7 +45,7 @@ The program creates the `STUDENT` table, inserts 10 sample records when the tabl
 Make sure MySQL is running and the database exists:
 
 ```sql
-CREATE DATABASE IF NOT EXISTS college_workshop;
+CREATE DATABASE IF NOT EXISTS NIET;
 ```
 
 Compile from the repository root:
