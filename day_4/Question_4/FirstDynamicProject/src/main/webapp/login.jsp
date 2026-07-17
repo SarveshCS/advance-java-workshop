@@ -1,45 +1,22 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
     <title>Login</title>
-    <style>
-        body {
-            font-family: Georgia, "Times New Roman", serif;
-            margin: 40px;
-            color: #222;
-        }
-
-        label,
-        input,
-        button {
-            display: block;
-            margin-top: 12px;
-        }
-
-        input {
-            padding: 8px;
-            width: 280px;
-        }
-
-        button {
-            padding: 8px 14px;
-            cursor: pointer;
-        }
-    </style>
 </head>
 <body>
-    <h1>Login</h1>
+    <h2>Login Page</h2>
 
     <form action="validate.jsp" method="post">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
+        <label>Email:</label>
+        <input type="text" name="email">
+        <br><br>
 
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" required>
+        <label>Password:</label>
+        <input type="password" name="password">
+        <br><br>
 
-        <button type="submit">Login</button>
+        <input type="submit" value="Login">
     </form>
 </body>
 </html>

@@ -32,13 +32,12 @@ Create the following JSP pages:
 
 ## Solution Summary
 
-This folder contains a JSP-only Maven WAR project named `FirstDynamicProject`. It uses predefined credentials and JSP session management. No database is needed for this question.
+This folder contains a Tomcat web project named `FirstDynamicProject`. It uses only JSP pages, predefined credentials, and JSP session management. No database is needed for this question.
 
 ## Files
 
 | File | Purpose |
 | --- | --- |
-| [FirstDynamicProject/pom.xml](FirstDynamicProject/pom.xml) | Maven configuration for building the JSP-only WAR file. |
 | [FirstDynamicProject/src/main/webapp/login.jsp](FirstDynamicProject/src/main/webapp/login.jsp) | Login form that posts email and password to `validate.jsp`. |
 | [FirstDynamicProject/src/main/webapp/validate.jsp](FirstDynamicProject/src/main/webapp/validate.jsp) | Checks the predefined credentials, creates the session, and redirects or shows an error. |
 | [FirstDynamicProject/src/main/webapp/profile.jsp](FirstDynamicProject/src/main/webapp/profile.jsp) | Protected profile page that displays the welcome message and logged-in email. |
@@ -46,23 +45,22 @@ This folder contains a JSP-only Maven WAR project named `FirstDynamicProject`. I
 
 ## How to Run
 
-Build the WAR from the project folder:
+Create the application folder inside Tomcat:
 
 ```powershell
-cd .\day_4\Question_4\FirstDynamicProject
-mvn clean package
+mkdir C:\xampp\tomcat\webapps\FirstDynamicProjectLogin
 ```
 
-Copy the generated WAR file to Tomcat's `webapps` folder:
+Copy the JSP files to Tomcat's `webapps` folder:
 
 ```powershell
-copy .\target\FirstDynamicProject.war C:\apache-tomcat-9.0.XX\webapps\
+copy .\day_4\Question_4\FirstDynamicProject\src\main\webapp\*.jsp C:\xampp\tomcat\webapps\FirstDynamicProjectLogin\
 ```
 
 Start Tomcat and open:
 
 ```text
-http://localhost:8080/FirstDynamicProject/login.jsp
+http://localhost:8080/FirstDynamicProjectLogin/login.jsp
 ```
 
 Use these credentials:

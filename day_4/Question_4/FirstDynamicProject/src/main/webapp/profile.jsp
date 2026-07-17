@@ -8,27 +8,13 @@
     }
 %>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
     <title>Profile</title>
-    <style>
-        body {
-            font-family: Georgia, "Times New Roman", serif;
-            margin: 40px;
-            color: #222;
-        }
-
-        .message {
-            border: 1px solid #999;
-            padding: 16px;
-            max-width: 720px;
-        }
-    </style>
 </head>
 <body>
     <h1>WELCOME NOIDA INSTITUTE OF ENGINEERING AND TECHNOLOGY</h1>
-    <div class="message">Logged in as: <%= email %></div>
+    <p>Logged in as: <%= email %></p>
     <p><a href="logout.jsp">Logout</a></p>
 </body>
 </html>

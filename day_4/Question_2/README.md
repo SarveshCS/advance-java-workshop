@@ -18,15 +18,15 @@ Tasks:
 
 ## Solution Summary
 
-This folder contains a console JDBC program named `JdbcProjectUpdate.java`. It connects to the same MySQL database used in the workshop, works on the `STUDENT` table, updates one record, deletes one record, inserts two new records, and then displays the final table.
+This folder contains a simple console JDBC program named `JdbcProjectUpdate.java`. It connects to the `NIET` database, works on the `STUDENT` table, updates one record, deletes one record, inserts two new records, and then displays the final table.
 
 The database settings are:
 
 | Setting | Value |
 | --- | --- |
-| Host | `127.0.0.1` |
+| Host | `localhost` |
 | Port | `3306` |
-| Database | `college_workshop` |
+| Database | `NIET` |
 | Username | `root` |
 | Password | empty password |
 
@@ -41,7 +41,7 @@ The database settings are:
 Make sure MySQL is running and the database exists:
 
 ```sql
-CREATE DATABASE IF NOT EXISTS college_workshop;
+CREATE DATABASE IF NOT EXISTS NIET;
 ```
 
 Compile from the repository root:

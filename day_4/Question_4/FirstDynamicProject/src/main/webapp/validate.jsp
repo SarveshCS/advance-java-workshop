@@ -10,27 +10,13 @@
     }
 %>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="2;url=login.jsp">
     <title>Invalid Login</title>
-    <style>
-        body {
-            font-family: Georgia, "Times New Roman", serif;
-            margin: 40px;
-            color: #222;
-        }
-
-        .message {
-            border: 1px solid #999;
-            padding: 16px;
-            max-width: 620px;
-        }
-    </style>
 </head>
 <body>
-    <h1>Login Failed</h1>
-    <div class="message">Invalid email or password. Please try again.</div>
+    <p>Invalid email or password. Please try again.</p>
     <p><a href="login.jsp">Back to login.jsp</a></p>
 </body>
 </html>
