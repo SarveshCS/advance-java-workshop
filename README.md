@@ -47,6 +47,12 @@ Add each program, notes file, or exercise under the correct day section. This wo
 | JSP input form | Displays a simple web form that posts student input to the servlet. | [day_2/servlet_jsp_demo/src/main/webapp/index.jsp](day_2/servlet_jsp_demo/src/main/webapp/index.jsp) |
 | JSP result page | Displays the message prepared by the servlet using JSP Expression Language. | [day_2/servlet_jsp_demo/src/main/webapp/result.jsp](day_2/servlet_jsp_demo/src/main/webapp/result.jsp) |
 
+### Day 3
+
+| Topic | Description | File |
+| --- | --- | --- |
+| Day 3 notes | Marks the Day 3 folder for future Advanced Java notes, exercises, and examples. | [day_3/README.md](day_3/README.md) |
+
 ### Day 4
 
 | Topic | Description | File |
@@ -66,6 +72,21 @@ Add each program, notes file, or exercise under the correct day section. This wo
 | JSP validation page | Checks predefined credentials, creates the HTTP session, and redirects or displays an error. | [day_4/Question_4/FirstDynamicProject/src/main/webapp/validate.jsp](day_4/Question_4/FirstDynamicProject/src/main/webapp/validate.jsp) |
 | JSP profile page | Displays the NIET welcome message and logged-in email when a valid session exists. | [day_4/Question_4/FirstDynamicProject/src/main/webapp/profile.jsp](day_4/Question_4/FirstDynamicProject/src/main/webapp/profile.jsp) |
 | JSP logout page | Invalidates the HTTP session, displays the logout message, and redirects back to login. | [day_4/Question_4/FirstDynamicProject/src/main/webapp/logout.jsp](day_4/Question_4/FirstDynamicProject/src/main/webapp/logout.jsp) |
+
+### Day 5
+
+| Topic | Description | File |
+| --- | --- | --- |
+| Todo web project guide | Explains the Servlet, JSP, JDBC, MySQL, and Tomcat todo list application with signup, login, logout, and dashboard features. | [day_5/todo_list_app/README.md](day_5/todo_list_app/README.md) |
+| Todo Maven project | Builds the Day 5 dynamic web project as a WAR file for Tomcat. | [day_5/todo_list_app/pom.xml](day_5/todo_list_app/pom.xml) |
+| Todo database utility | Connects to MySQL database `college_workshop` and automatically creates required user and todo tables. | [day_5/todo_list_app/src/main/java/com/workshop/todo/db/DatabaseUtil.java](day_5/todo_list_app/src/main/java/com/workshop/todo/db/DatabaseUtil.java) |
+| Todo login servlet | Handles simple signup and login using users stored in the MySQL database. | [day_5/todo_list_app/src/main/java/com/workshop/todo/servlet/AuthServlet.java](day_5/todo_list_app/src/main/java/com/workshop/todo/servlet/AuthServlet.java) |
+| Todo dashboard servlet | Loads the logged-in user's todo items with filtering and sorting options. | [day_5/todo_list_app/src/main/java/com/workshop/todo/servlet/DashboardServlet.java](day_5/todo_list_app/src/main/java/com/workshop/todo/servlet/DashboardServlet.java) |
+| Todo action servlet | Adds, completes, deletes, and saves drag-and-drop order for todo items. | [day_5/todo_list_app/src/main/java/com/workshop/todo/servlet/TodoServlet.java](day_5/todo_list_app/src/main/java/com/workshop/todo/servlet/TodoServlet.java) |
+| Todo HTML helper | Escapes user-entered todo text before it is displayed on JSP pages. | [day_5/todo_list_app/src/main/java/com/workshop/todo/util/HtmlUtil.java](day_5/todo_list_app/src/main/java/com/workshop/todo/util/HtmlUtil.java) |
+| Todo login page | Displays the login form for existing users. | [day_5/todo_list_app/src/main/webapp/login.jsp](day_5/todo_list_app/src/main/webapp/login.jsp) |
+| Todo signup page | Displays the signup form for new users. | [day_5/todo_list_app/src/main/webapp/signup.jsp](day_5/todo_list_app/src/main/webapp/signup.jsp) |
+| Todo dashboard page | Shows the protected modern todo dashboard with analytics, editable tasks, theme switching, hide completed, sorting, and automatic drag-and-drop reorder. | [day_5/todo_list_app/src/main/webapp/dashboard.jsp](day_5/todo_list_app/src/main/webapp/dashboard.jsp) |
 
 ## Running Java Programs
 
