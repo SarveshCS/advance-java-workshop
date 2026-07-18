@@ -88,6 +88,31 @@ Add each program, notes file, or exercise under the correct day section. This wo
 | Todo signup page | Displays the signup form for new users. | [day_5/todo_list_app/src/main/webapp/signup.jsp](day_5/todo_list_app/src/main/webapp/signup.jsp) |
 | Todo dashboard page | Shows the protected modern todo dashboard with analytics, editable tasks, theme switching, hide completed, sorting, and automatic drag-and-drop reorder. | [day_5/todo_list_app/src/main/webapp/dashboard.jsp](day_5/todo_list_app/src/main/webapp/dashboard.jsp) |
 
+### Day 6
+
+| Topic | Description | File |
+| --- | --- | --- |
+| Spring Framework project guide | Explains the interactive Spring Core course enrollment demo, manual setup needs, files, run command, and presentation points. | [day_6/spring_framework_demo/README.md](day_6/spring_framework_demo/README.md) |
+| Spring Maven project | Builds and runs a Spring Framework dependency injection demo. | [day_6/spring_framework_demo/pom.xml](day_6/spring_framework_demo/pom.xml) |
+| Spring application starter | Starts the Spring container, gets service beans, and runs the menu-driven console app. | [day_6/spring_framework_demo/src/main/java/com/workshop/springdemo/App.java](day_6/spring_framework_demo/src/main/java/com/workshop/springdemo/App.java) |
+| Spring Java configuration | Defines the repository and service objects as Spring beans. | [day_6/spring_framework_demo/src/main/java/com/workshop/springdemo/config/AppConfig.java](day_6/spring_framework_demo/src/main/java/com/workshop/springdemo/config/AppConfig.java) |
+| Spring course model | Represents one course with a code, title, seat limit, and enrollment count. | [day_6/spring_framework_demo/src/main/java/com/workshop/springdemo/model/Course.java](day_6/spring_framework_demo/src/main/java/com/workshop/springdemo/model/Course.java) |
+| Spring enrollment result model | Stores whether one student enrollment attempt succeeded or failed. | [day_6/spring_framework_demo/src/main/java/com/workshop/springdemo/model/EnrollmentResult.java](day_6/spring_framework_demo/src/main/java/com/workshop/springdemo/model/EnrollmentResult.java) |
+| Spring course repository | Stores sample and user-added courses in memory while the program is running. | [day_6/spring_framework_demo/src/main/java/com/workshop/springdemo/repository/CourseRepository.java](day_6/spring_framework_demo/src/main/java/com/workshop/springdemo/repository/CourseRepository.java) |
+| Spring enrollment service | Applies enrollment and course creation rules such as full courses and unknown course codes. | [day_6/spring_framework_demo/src/main/java/com/workshop/springdemo/service/EnrollmentService.java](day_6/spring_framework_demo/src/main/java/com/workshop/springdemo/service/EnrollmentService.java) |
+| Spring report service | Prints enrollment results and the available courses report. | [day_6/spring_framework_demo/src/main/java/com/workshop/springdemo/service/ReportService.java](day_6/spring_framework_demo/src/main/java/com/workshop/springdemo/service/ReportService.java) |
+| Spring Boot project guide | Explains the Spring Boot REST API demo, auto-configuration, embedded server, endpoints, and run commands. | [day_6/spring_boot_demo/README.md](day_6/spring_boot_demo/README.md) |
+| Spring Boot Maven project | Builds and runs a Spring Boot web application with embedded Tomcat. | [day_6/spring_boot_demo/pom.xml](day_6/spring_boot_demo/pom.xml) |
+| Spring Boot application starter | Starts the Spring Boot application using `SpringApplication.run(...)`. | [day_6/spring_boot_demo/src/main/java/com/workshop/springbootdemo/SpringBootDemoApplication.java](day_6/spring_boot_demo/src/main/java/com/workshop/springbootdemo/SpringBootDemoApplication.java) |
+| Spring Boot REST controller | Defines endpoints for viewing courses, adding courses, and enrolling students. | [day_6/spring_boot_demo/src/main/java/com/workshop/springbootdemo/controller/CourseController.java](day_6/spring_boot_demo/src/main/java/com/workshop/springbootdemo/controller/CourseController.java) |
+| Spring Boot course request DTO | Carries JSON request data for creating a new course. | [day_6/spring_boot_demo/src/main/java/com/workshop/springbootdemo/dto/CourseRequest.java](day_6/spring_boot_demo/src/main/java/com/workshop/springbootdemo/dto/CourseRequest.java) |
+| Spring Boot enrollment request DTO | Carries JSON request data for enrolling a student. | [day_6/spring_boot_demo/src/main/java/com/workshop/springbootdemo/dto/EnrollmentRequest.java](day_6/spring_boot_demo/src/main/java/com/workshop/springbootdemo/dto/EnrollmentRequest.java) |
+| Spring Boot course model | Represents a course returned as JSON by the API. | [day_6/spring_boot_demo/src/main/java/com/workshop/springbootdemo/model/Course.java](day_6/spring_boot_demo/src/main/java/com/workshop/springbootdemo/model/Course.java) |
+| Spring Boot enrollment result model | Stores whether one API enrollment request succeeded or failed. | [day_6/spring_boot_demo/src/main/java/com/workshop/springbootdemo/model/EnrollmentResult.java](day_6/spring_boot_demo/src/main/java/com/workshop/springbootdemo/model/EnrollmentResult.java) |
+| Spring Boot course repository | Stores sample courses in memory as a Spring `@Repository` component. | [day_6/spring_boot_demo/src/main/java/com/workshop/springbootdemo/repository/CourseRepository.java](day_6/spring_boot_demo/src/main/java/com/workshop/springbootdemo/repository/CourseRepository.java) |
+| Spring Boot enrollment service | Applies course creation and enrollment rules as a Spring `@Service` component. | [day_6/spring_boot_demo/src/main/java/com/workshop/springbootdemo/service/EnrollmentService.java](day_6/spring_boot_demo/src/main/java/com/workshop/springbootdemo/service/EnrollmentService.java) |
+| Spring Boot context test | Verifies that the Spring Boot application context starts correctly. | [day_6/spring_boot_demo/src/test/java/com/workshop/springbootdemo/SpringBootDemoApplicationTests.java](day_6/spring_boot_demo/src/test/java/com/workshop/springbootdemo/SpringBootDemoApplicationTests.java) |
+
 ## Running Java Programs
 
 Create day folders using this pattern:
