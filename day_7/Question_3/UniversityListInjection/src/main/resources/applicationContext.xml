@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="university" class="com.workshop.university.model.University">
+        <property name="universityName" value="Noida Institute of Engineering and Technology" />
+        <property name="departments">
+            <list>
+                <value>Computer Science</value>
+                <value>Information Technology</value>
+                <value>Electronics and Communication</value>
+                <value>Mechanical Engineering</value>
+                <value>Civil Engineering</value>
+            </list>
+        </property>
+    </bean>
+</beans>
