@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title th:text="${pageTitle}">Student Form</title><link rel="stylesheet" th:href="@{/css/app.css}"></head>
+<body><div class="shell"><aside class="sidebar"><div class="brand"><h2>SMS</h2><span>School admin panel</span></div><nav class="nav"><a th:href="@{/dashboard}">Dashboard</a><a class="active" th:href="@{/students}">Students</a><a th:href="@{/teachers}">Teachers</a><a th:href="@{/classes}">Classes</a><a th:href="@{/subjects}">Subjects</a><a th:href="@{/logout}">Logout</a></nav></aside><main class="content">
+    <section class="form-panel"><div class="form-head"><h2 th:text="${pageTitle}">Student Form</h2><a class="button secondary" th:href="@{/students}">Back</a></div><form th:action="@{/students/save}" th:object="${student}" method="post"><div class="form-body"><input type="hidden" th:field="*{id}"><div class="form-grid">
+        <div class="field"><label>Student Name</label><input type="text" th:field="*{name}" required></div><div class="field"><label>Roll Number</label><input type="text" th:field="*{rollNumber}" required></div>
+        <div class="field"><label>Email</label><input type="email" th:field="*{email}"></div><div class="field"><label>Phone</label><input type="text" th:field="*{phone}"></div>
+        <div class="field"><label>Class</label><select name="schoolClassId"><option value="">Select class</option><option th:each="schoolClass : ${classes}" th:value="${schoolClass.id}" th:text="${schoolClass.displayName}" th:selected="${student.schoolClass != null and student.schoolClass.id == schoolClass.id}"></option></select></div>
+        <div class="field full"><label>Address</label><textarea th:field="*{address}"></textarea></div>
+    </div><br><button type="submit">Save Student</button></div></form></section>
+</main></div></body></html>

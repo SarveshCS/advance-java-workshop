@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" th:href="@{/css/app.css}">
+</head>
+<body>
+    <div class="shell">
+        <aside class="sidebar">
+            <div class="brand"><h2>SMS</h2><span>School admin panel</span></div>
+            <nav class="nav">
+                <a class="active" th:href="@{/dashboard}">Dashboard</a>
+                <a th:href="@{/students}">Students</a>
+                <a th:href="@{/teachers}">Teachers</a>
+                <a th:href="@{/classes}">Classes</a>
+                <a th:href="@{/subjects}">Subjects</a>
+                <a th:href="@{/logout}">Logout</a>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <div class="topbar">
+                <div class="page-title">
+                    <h1>Dashboard</h1>
+                    <small th:text="'Logged in as ' + ${adminUser}">Logged in as Admin</small>
+                </div>
+                <a class="button" th:href="@{/students/new}">Add Student</a>
+            </div>
+
+            <section class="grid">
+                <div class="stat"><span>Total Students</span><strong th:text="${studentCount}">0</strong></div>
+                <div class="stat"><span>Total Teachers</span><strong th:text="${teacherCount}">0</strong></div>
+                <div class="stat"><span>Total Classes</span><strong th:text="${classCount}">0</strong></div>
+                <div class="stat"><span>Total Subjects</span><strong th:text="${subjectCount}">0</strong></div>
+            </section>
+
+            <section class="panel">
+                <div class="panel-head"><h2>Recent Students</h2><a class="button secondary" th:href="@{/students}">View All</a></div>
+                <table>
+                    <thead><tr><th>Name</th><th>Roll No.</th><th>Class</th><th>Phone</th></tr></thead>
+                    <tbody>
+                        <tr th:each="student : ${students}">
+                            <td th:text="${student.name}">Name</td>
+                            <td th:text="${student.rollNumber}">Roll</td>
+                            <td th:text="${student.schoolClass != null ? student.schoolClass.displayName : 'Not assigned'}">Class</td>
+                            <td th:text="${student.phone}">Phone</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

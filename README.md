@@ -144,6 +144,39 @@ Add each program, notes file, or exercise under the correct day section. This wo
 | Course bean | Stores course ID, course name, and faculty name as a Spring `@Component`. | [day_7/Question_4/CourseEnrollmentSystem/src/main/java/com/workshop/course/model/Course.java](day_7/Question_4/CourseEnrollmentSystem/src/main/java/com/workshop/course/model/Course.java) |
 | Student bean | Stores student details and receives the `Course` dependency using `@Autowired`. | [day_7/Question_4/CourseEnrollmentSystem/src/main/java/com/workshop/course/model/Student.java](day_7/Question_4/CourseEnrollmentSystem/src/main/java/com/workshop/course/model/Student.java) |
 
+### Day 8
+
+| Topic | Description | File |
+| --- | --- | --- |
+| School management guide | Explains the Spring Boot, JPA, MySQL, and Thymeleaf school management system with run steps. | [day_8/README.md](day_8/README.md) |
+| School management Maven project | Builds and runs the Spring Boot school management system. | [day_8/school_management_system/pom.xml](day_8/school_management_system/pom.xml) |
+| School management properties | Configures embedded server port, MySQL database, and JPA table creation. | [day_8/school_management_system/src/main/resources/application.properties](day_8/school_management_system/src/main/resources/application.properties) |
+| School management application starter | Starts the Spring Boot application. | [day_8/school_management_system/src/main/java/com/workshop/school/SchoolManagementApplication.java](day_8/school_management_system/src/main/java/com/workshop/school/SchoolManagementApplication.java) |
+| School data seeder | Creates the default admin account and sample teachers, subjects, classes, and students. | [day_8/school_management_system/src/main/java/com/workshop/school/config/DataSeeder.java](day_8/school_management_system/src/main/java/com/workshop/school/config/DataSeeder.java) |
+| Admin entity | Stores the single admin login record. | [day_8/school_management_system/src/main/java/com/workshop/school/model/Admin.java](day_8/school_management_system/src/main/java/com/workshop/school/model/Admin.java) |
+| Student entity | Stores student details and class assignment using JPA. | [day_8/school_management_system/src/main/java/com/workshop/school/model/Student.java](day_8/school_management_system/src/main/java/com/workshop/school/model/Student.java) |
+| Teacher entity | Stores teacher details and assigned subject text. | [day_8/school_management_system/src/main/java/com/workshop/school/model/Teacher.java](day_8/school_management_system/src/main/java/com/workshop/school/model/Teacher.java) |
+| Subject entity | Stores subject name and subject code. | [day_8/school_management_system/src/main/java/com/workshop/school/model/Subject.java](day_8/school_management_system/src/main/java/com/workshop/school/model/Subject.java) |
+| School class entity | Stores class name, section, class teacher, and multiple subjects. | [day_8/school_management_system/src/main/java/com/workshop/school/model/SchoolClass.java](day_8/school_management_system/src/main/java/com/workshop/school/model/SchoolClass.java) |
+| Admin repository | Finds the seeded admin by username for login. | [day_8/school_management_system/src/main/java/com/workshop/school/repository/AdminRepository.java](day_8/school_management_system/src/main/java/com/workshop/school/repository/AdminRepository.java) |
+| Student repository | Provides student CRUD and lookup by class. | [day_8/school_management_system/src/main/java/com/workshop/school/repository/StudentRepository.java](day_8/school_management_system/src/main/java/com/workshop/school/repository/StudentRepository.java) |
+| Teacher repository | Provides teacher CRUD. | [day_8/school_management_system/src/main/java/com/workshop/school/repository/TeacherRepository.java](day_8/school_management_system/src/main/java/com/workshop/school/repository/TeacherRepository.java) |
+| Subject repository | Provides subject CRUD. | [day_8/school_management_system/src/main/java/com/workshop/school/repository/SubjectRepository.java](day_8/school_management_system/src/main/java/com/workshop/school/repository/SubjectRepository.java) |
+| School class repository | Provides class CRUD and class teacher lookup. | [day_8/school_management_system/src/main/java/com/workshop/school/repository/SchoolClassRepository.java](day_8/school_management_system/src/main/java/com/workshop/school/repository/SchoolClassRepository.java) |
+| Authentication controller | Handles admin login, logout, and home redirects. | [day_8/school_management_system/src/main/java/com/workshop/school/controller/AuthController.java](day_8/school_management_system/src/main/java/com/workshop/school/controller/AuthController.java) |
+| Dashboard controller | Shows dashboard counts and recent records. | [day_8/school_management_system/src/main/java/com/workshop/school/controller/DashboardController.java](day_8/school_management_system/src/main/java/com/workshop/school/controller/DashboardController.java) |
+| Student controller | Handles student list, create, edit, save, and delete actions. | [day_8/school_management_system/src/main/java/com/workshop/school/controller/StudentController.java](day_8/school_management_system/src/main/java/com/workshop/school/controller/StudentController.java) |
+| Teacher controller | Handles teacher list, create, edit, save, and delete actions. | [day_8/school_management_system/src/main/java/com/workshop/school/controller/TeacherController.java](day_8/school_management_system/src/main/java/com/workshop/school/controller/TeacherController.java) |
+| Subject controller | Handles subject list, create, edit, save, and delete actions. | [day_8/school_management_system/src/main/java/com/workshop/school/controller/SubjectController.java](day_8/school_management_system/src/main/java/com/workshop/school/controller/SubjectController.java) |
+| School class controller | Handles class CRUD, class teacher assignment, and subject assignment. | [day_8/school_management_system/src/main/java/com/workshop/school/controller/SchoolClassController.java](day_8/school_management_system/src/main/java/com/workshop/school/controller/SchoolClassController.java) |
+| School management theme | Provides the single polished light theme for the app. | [day_8/school_management_system/src/main/resources/static/css/app.css](day_8/school_management_system/src/main/resources/static/css/app.css) |
+| Admin login page | Displays the admin login form. | [day_8/school_management_system/src/main/resources/templates/login.html](day_8/school_management_system/src/main/resources/templates/login.html) |
+| Admin dashboard page | Displays summary cards and recent students. | [day_8/school_management_system/src/main/resources/templates/dashboard.html](day_8/school_management_system/src/main/resources/templates/dashboard.html) |
+| Student pages | Provide student list and form screens. | [day_8/school_management_system/src/main/resources/templates/students/list.html](day_8/school_management_system/src/main/resources/templates/students/list.html) |
+| Teacher pages | Provide teacher list and form screens. | [day_8/school_management_system/src/main/resources/templates/teachers/list.html](day_8/school_management_system/src/main/resources/templates/teachers/list.html) |
+| Class pages | Provide class list and form screens. | [day_8/school_management_system/src/main/resources/templates/classes/list.html](day_8/school_management_system/src/main/resources/templates/classes/list.html) |
+| Subject pages | Provide subject list and form screens. | [day_8/school_management_system/src/main/resources/templates/subjects/list.html](day_8/school_management_system/src/main/resources/templates/subjects/list.html) |
+
 ## Running Java Programs
 
 Create day folders using this pattern:

@@ -1,0 +1,7 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Subjects</title><link rel="stylesheet" th:href="@{/css/app.css}"></head>
+<body><div class="shell"><aside class="sidebar"><div class="brand"><h2>SMS</h2><span>School admin panel</span></div><nav class="nav"><a th:href="@{/dashboard}">Dashboard</a><a th:href="@{/students}">Students</a><a th:href="@{/teachers}">Teachers</a><a th:href="@{/classes}">Classes</a><a class="active" th:href="@{/subjects}">Subjects</a><a th:href="@{/logout}">Logout</a></nav></aside><main class="content">
+    <div class="topbar"><div class="page-title"><h1>Subjects</h1><p>Create subjects and attach them to classes.</p></div><a class="button" th:href="@{/subjects/new}">Add Subject</a></div>
+    <div class="message" th:if="${message}" th:text="${message}"></div><section class="panel"><table><thead><tr><th>Subject Name</th><th>Subject Code</th><th>Actions</th></tr></thead><tbody><tr th:each="subject : ${subjects}"><td th:text="${subject.name}">Name</td><td th:text="${subject.code}">Code</td><td><div class="actions"><a class="button warning" th:href="@{/subjects/edit/{id}(id=${subject.id})}">Edit</a><a class="button danger" th:href="@{/subjects/delete/{id}(id=${subject.id})}">Delete</a></div></td></tr></tbody></table><div class="empty" th:if="${#lists.isEmpty(subjects)}">No subjects added yet.</div></section>
+</main></div></body></html>

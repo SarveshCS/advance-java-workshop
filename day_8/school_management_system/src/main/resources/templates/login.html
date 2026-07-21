@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link rel="stylesheet" th:href="@{/css/app.css}">
+</head>
+<body class="login-body">
+    <main class="login-card">
+        <section class="login-hero">
+            <h1>School Management System</h1>
+            <p>Manage students, teachers, classes, and subjects from one clean admin dashboard.</p>
+        </section>
+
+        <section class="login-panel">
+            <h2>Admin Login</h2>
+            <p>Use the default admin account to open the dashboard.</p>
+
+            <div class="message" th:if="${message}" th:text="${message}"></div>
+            <div class="error" th:if="${error}" th:text="${error}"></div>
+
+            <form th:action="@{/login}" method="post">
+                <div class="field">
+                    <label>Username</label>
+                    <input type="text" name="username" value="admin" required>
+                </div>
+                <div class="field">
+                    <label>Password</label>
+                    <input type="password" name="password" value="admin123" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

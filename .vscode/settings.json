@@ -12,6 +12,9 @@
         }
     },
     "terminal.integrated.defaultProfile.windows": "PowerShell with Repo Java",
+    "java.import.maven.enabled": true,
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.errors.incompleteClasspath.severity": "ignore",
     "java.project.sourcePaths": [
         "day_1",
         "day_2",

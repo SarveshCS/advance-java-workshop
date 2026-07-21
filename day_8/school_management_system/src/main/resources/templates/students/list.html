@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Students</title><link rel="stylesheet" th:href="@{/css/app.css}"></head>
+<body><div class="shell"><aside class="sidebar"><div class="brand"><h2>SMS</h2><span>School admin panel</span></div><nav class="nav"><a th:href="@{/dashboard}">Dashboard</a><a class="active" th:href="@{/students}">Students</a><a th:href="@{/teachers}">Teachers</a><a th:href="@{/classes}">Classes</a><a th:href="@{/subjects}">Subjects</a><a th:href="@{/logout}">Logout</a></nav></aside><main class="content">
+    <div class="topbar"><div class="page-title"><h1>Students</h1><p>Register students and assign them to classes.</p></div><a class="button" th:href="@{/students/new}">Add Student</a></div>
+    <div class="message" th:if="${message}" th:text="${message}"></div>
+    <section class="panel"><table><thead><tr><th>Name</th><th>Roll No.</th><th>Email</th><th>Class</th><th>Actions</th></tr></thead><tbody>
+        <tr th:each="student : ${students}"><td th:text="${student.name}">Name</td><td th:text="${student.rollNumber}">Roll</td><td th:text="${student.email}">Email</td><td th:text="${student.schoolClass != null ? student.schoolClass.displayName : 'Not assigned'}">Class</td><td><div class="actions"><a class="button warning" th:href="@{/students/edit/{id}(id=${student.id})}">Edit</a><a class="button danger" th:href="@{/students/delete/{id}(id=${student.id})}">Delete</a></div></td></tr>
+    </tbody></table><div class="empty" th:if="${#lists.isEmpty(students)}">No students added yet.</div></section>
+</main></div></body></html>
