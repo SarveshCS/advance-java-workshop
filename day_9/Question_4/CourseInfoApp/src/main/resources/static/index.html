@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Course Info App</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 30px; background: #f4f6f8; }
+        h1 { color: #2c3e50; }
+        a { display: inline-block; margin: 6px 0; color: #2563eb; }
+        .card { background: white; padding: 20px; border-radius: 8px; max-width: 480px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Course Info App</h1>
+        <p>This page is served automatically by Spring Boot's static content auto-configuration, directly from <code>src/main/resources/static</code>, with no controller code.</p>
+        <p>Try these API endpoints:</p>
+        <a href="/api/courses">GET /api/courses (all courses, JSON)</a><br>
+        <a href="/api/courses/1">GET /api/courses/1 (one course, JSON)</a><br>
+        <a href="/api/courses/1/view">GET /api/courses/1/view (formatted HTML)</a><br>
+        <a href="/api/courses/99">GET /api/courses/99 (not found, JSON error)</a>
+    </div>
+</body>
+</html>
