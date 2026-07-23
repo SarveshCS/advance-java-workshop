@@ -1,15 +1,15 @@
 :root {
-    --bg: #f6f3ed;
+    --bg: #f7f8fb;
     --panel: #ffffff;
-    --ink: #1f2933;
+    --ink: #101828;
     --muted: #667085;
-    --line: #e4ded4;
-    --brand: #256d85;
-    --brand-dark: #17495a;
-    --accent: #d68c45;
+    --line: #e5e7eb;
+    --brand: #0f766e;
+    --brand-dark: #115e59;
+    --accent: #f59e0b;
     --danger: #b42318;
     --success: #237b4b;
-    --shadow: 0 18px 40px rgba(31, 41, 51, 0.08);
+    --shadow: 0 16px 45px rgba(15, 23, 42, 0.08);
 }
 
 * {
@@ -19,9 +19,11 @@
 body {
     margin: 0;
     min-height: 100vh;
-    background: linear-gradient(135deg, #f6f3ed 0%, #eaf3f4 50%, #fff9ef 100%);
+    background:
+        radial-gradient(circle at top left, rgba(15, 118, 110, 0.10), transparent 34%),
+        linear-gradient(180deg, #f8fafc 0%, #eef4f3 100%);
     color: var(--ink);
-    font-family: Georgia, "Times New Roman", serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 a {
@@ -42,7 +44,7 @@ a {
     overflow: hidden;
     background: var(--panel);
     border: 1px solid var(--line);
-    border-radius: 8px;
+    border-radius: 18px;
     box-shadow: var(--shadow);
 }
 
@@ -58,7 +60,7 @@ a {
 
 .login-hero h1 {
     margin: 0 0 16px;
-    font-size: 42px;
+    font-size: 40px;
     line-height: 1.1;
 }
 
@@ -77,7 +79,8 @@ a {
 .login-panel h2,
 .page-title h1 {
     margin: 0;
-    font-size: 30px;
+    font-size: 32px;
+    letter-spacing: 0;
 }
 
 .login-panel p,
@@ -88,13 +91,13 @@ a {
 
 .shell {
     display: grid;
-    grid-template-columns: 260px 1fr;
+    grid-template-columns: 248px 1fr;
     min-height: 100vh;
 }
 
 .sidebar {
-    padding: 28px 20px;
-    background: #ffffffcc;
+    padding: 24px 18px;
+    background: rgba(255, 255, 255, 0.88);
     border-right: 1px solid var(--line);
     backdrop-filter: blur(12px);
 }
@@ -106,7 +109,8 @@ a {
 .brand h2 {
     margin: 0;
     color: var(--brand-dark);
-    font-size: 24px;
+    font-size: 22px;
+    letter-spacing: 0;
 }
 
 .brand span {
@@ -120,10 +124,10 @@ a {
 }
 
 .nav a {
-    padding: 12px 14px;
-    border-radius: 8px;
+    padding: 11px 13px;
+    border-radius: 12px;
     color: var(--muted);
-    font-weight: 700;
+    font-weight: 650;
 }
 
 .nav a:hover,
@@ -133,7 +137,7 @@ a {
 }
 
 .content {
-    padding: 32px;
+    padding: 30px;
 }
 
 .topbar {
@@ -162,12 +166,12 @@ a {
 .form-panel {
     background: var(--panel);
     border: 1px solid var(--line);
-    border-radius: 8px;
+    border-radius: 16px;
     box-shadow: var(--shadow);
 }
 
 .stat {
-    padding: 22px;
+    padding: 20px;
 }
 
 .stat span {
@@ -180,7 +184,8 @@ a {
     display: block;
     margin-top: 10px;
     color: var(--brand-dark);
-    font-size: 34px;
+    font-size: 36px;
+    line-height: 1;
 }
 
 .panel {
@@ -240,11 +245,16 @@ button {
     min-height: 40px;
     padding: 10px 16px;
     border: 0;
-    border-radius: 8px;
+    border-radius: 12px;
     background: var(--brand);
     color: #ffffff;
     font-weight: 700;
     cursor: pointer;
+}
+
+.button:hover,
+button:hover {
+    background: var(--brand-dark);
 }
 
 .button.secondary {
@@ -322,10 +332,23 @@ textarea {
     min-height: 42px;
     padding: 10px 12px;
     border: 1px solid var(--line);
-    border-radius: 8px;
-    background: #fffdf8;
+    border-radius: 12px;
+    background: #ffffff;
     color: var(--ink);
     font: inherit;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: rgba(15, 118, 110, 0.65);
+    box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.12);
+    outline: none;
+}
+
+.hint {
+    color: var(--muted);
+    font-size: 12px;
 }
 
 select[multiple] {

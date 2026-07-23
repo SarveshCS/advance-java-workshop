@@ -2,6 +2,8 @@ package com.workshop.school.controller;
 
 import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -75,6 +77,15 @@ public class SchoolClassController {
         Teacher teacher = teacherRepository.findById(teacherId).orElse(null);
         List<Subject> subjects = subjectIds == null ? List.of() : subjectRepository.findAllById(subjectIds);
 
+        if (teacher != null) {
+            for (SchoolClass assignedClass : schoolClassRepository.findByClassTeacherId(teacher.getId())) {
+                if (schoolClass.getId() == null || !assignedClass.getId().equals(schoolClass.getId())) {
+                    assignedClass.setClassTeacher(null);
+                    schoolClassRepository.save(assignedClass);
+                }
+            }
+        }
+
         schoolClass.setClassTeacher(teacher);
         schoolClass.setSubjects(new HashSet<>(subjects));
         schoolClassRepository.save(schoolClass);
@@ -97,9 +108,14 @@ public class SchoolClassController {
     }
 
     private void prepareForm(Model model, SchoolClass schoolClass, String pageTitle) {
+        Set<Long> selectedSubjectIds = schoolClass.getSubjects().stream()
+                .map(Subject::getId)
+                .collect(Collectors.toSet());
+
         model.addAttribute("schoolClass", schoolClass);
         model.addAttribute("teachers", teacherRepository.findAll());
         model.addAttribute("subjects", subjectRepository.findAll());
+        model.addAttribute("selectedSubjectIds", selectedSubjectIds);
         model.addAttribute("pageTitle", pageTitle);
     }
 

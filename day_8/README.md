@@ -15,9 +15,10 @@ The app has one admin login. After login, the admin can manage students, teacher
 | Admin login/logout | Uses one seeded admin account with session-based login. |
 | Dashboard | Shows total students, teachers, classes, and subjects. |
 | Student CRUD | Add, view, edit, delete, and assign students to classes. |
-| Teacher CRUD | Add, view, edit, and delete teacher records. |
+| Teacher CRUD | Add, view, edit, delete teacher records, and assign a teacher to an existing class. |
 | Subject CRUD | Add, view, edit, and delete subjects. |
 | Class CRUD | Add, view, edit, delete classes, assign class teacher, and assign multiple subjects. |
+| Searchable assignments | Teacher, student, and class forms use searchable pickers for existing classes or teachers. |
 | JPA database setup | Creates database tables automatically using Spring Data JPA and Hibernate. |
 
 ## Login Details
@@ -97,3 +98,5 @@ Password: admin123
 3. The app uses MySQL from XAMPP as the database.
 4. The admin can perform CRUD operations for students, teachers, subjects, and classes.
 5. The class module shows relationships by assigning one class teacher and multiple subjects.
+6. The teacher form is also linked with classes, so assigning a class to a teacher updates that class teacher relationship.
+7. Student and teacher assignment fields use searchable dropdowns based on already-created platform data.

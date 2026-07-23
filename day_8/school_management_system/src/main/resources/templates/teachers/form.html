@@ -5,6 +5,7 @@
     <section class="form-panel"><div class="form-head"><h2 th:text="${pageTitle}">Teacher Form</h2><a class="button secondary" th:href="@{/teachers}">Back</a></div><form th:action="@{/teachers/save}" th:object="${teacher}" method="post"><div class="form-body"><input type="hidden" th:field="*{id}"><div class="form-grid">
         <div class="field"><label>Teacher Name</label><input type="text" th:field="*{name}" required></div><div class="field"><label>Email</label><input type="email" th:field="*{email}"></div>
         <div class="field"><label>Phone</label><input type="text" th:field="*{phone}"></div><div class="field"><label>Qualification</label><input type="text" th:field="*{qualification}"></div>
-        <div class="field full"><label>Assigned Subject</label><input type="text" th:field="*{assignedSubject}"></div>
+        <div class="field"><label>Assigned Subject</label><input type="text" th:field="*{assignedSubject}"></div>
+        <div class="field" data-picker><label>Assigned Class</label><input type="search" data-picker-input list="teacher-class-options" th:value="${assignedClassName}" placeholder="Search class"><input type="hidden" name="assignedClassId" data-picker-hidden th:value="${assignedClassId}"><datalist id="teacher-class-options"><option th:each="schoolClass : ${classes}" th:value="${schoolClass.displayName}" th:attr="data-id=${schoolClass.id}"></option></datalist><small class="hint">Choose from classes already created in the platform.</small></div>
     </div><br><button type="submit">Save Teacher</button></div></form></section>
-</main></div></body></html>
+</main></div><script th:src="@{/js/app.js}"></script></body></html>
